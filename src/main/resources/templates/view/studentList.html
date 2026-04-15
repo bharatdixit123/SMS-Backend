@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="" th:href="@{/CSS/studentList.css}"/>
+</head>
+<body>
+
+<h2>Student List</h2>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a th:href="@{/studentList}">Student List</a>
+        <a th:href="@{/}">Add Student</a>
+    </div>
+
+    <div class="nav-right">
+        <form th:action="@{/studentSearch}" method="get">
+            <input type="text" name="keyword" placeholder="Search by name or roll no" th:value="${keyword}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<p th:if="${#lists.isEmpty(students)}">
+    No data available
+</p>
+
+<!-- <c:if test="${not empty students}"> -->
+<table border="1" cellpadding="8"
+       th:if="${not #lists.isEmpty(students)}">
+    <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>RollNo</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>View</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    <!-- <c:forEach items="${students}" var="s" varStatus="status"> -->
+    
+        <tr th:each="s, stat : ${students}">
+        <!-- <td>${s.id}</td> -->
+            <td th:text="${stat.index + 1}"></td>
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.rollNo}"></td>
+            <td th:text="${s.gender}"></td>
+            <td th:text="${s.age}"></td>
+            <td th:text="${s.course}"></td>
+            <td th:text="${s.email}"></td>
+            <td th:text="${s.phone}"></td>
+            
+            <td>
+                <a th:href="@{/getStd/{id}(id=${s.id})}">View</a> 
+            </td>
+            
+            <td>
+                <a th:href="@{/updateStd/{id}(id=${s.id})}">Edit</a> 
+            </td>
+            
+            <td>
+                <a th:href="@{/deleteStd/{id}(id=${s.id})}">Delete</a>
+            </td>
+        </tr>
+</table>
+
+        <p th:if="${#lists.isEmpty(students)}">
+           No data available
+        </p>
+
+</body>
+</html>

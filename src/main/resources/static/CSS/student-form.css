@@ -1,0 +1,126 @@
+@charset "UTF-8";
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#eef2f5;
+}
+
+#heading{
+    text-align:center;
+}
+
+.container{
+    width:95%;
+    margin:20px auto;
+    background:#fff;
+    border-radius:4px;
+    box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+.header-buttons {
+    text-align: center;       /* Center horizontally */
+    margin: 20px 0;           /* Top & bottom spacing */
+}
+
+.header-buttons label {
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.search-box {
+    padding: 5px 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.search-button, .header-buttons a button {
+    padding: 5px 12px;
+    border: 1px solid #333;
+    background-color: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.search-button:hover, .header-buttons a button:hover {
+    background-color: #ddd;
+}
+
+.header{
+    background:#1aa3a3;
+    color:white;
+    padding:10px 15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.search-box {
+    padding: 5px 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    padding: 5px 12px;
+    margin-left: 5px;
+    border: 1px solid #333;
+    background-color: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-btn:hover {
+    background-color: #ddd;
+}
+
+
+.form-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:12px;
+    padding:15px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-size:12px;
+    margin-bottom:4px;
+}
+
+.form-group input,
+.form-group select{
+    padding:6px;
+    border:1px solid #ccc;
+    border-radius:3px;
+}
+
+.buttons{
+    padding:10px 15px;
+    text-align:right;
+    border-top:1px solid #ddd;
+}
+
+.buttons button{
+    background:#1aa3a3;
+    color:white;
+    border:none;
+    padding:6px 15px;
+    border-radius:3px;
+    cursor:pointer;
+}
+
+.buttons button:hover{
+    background:#148c8c;
+}

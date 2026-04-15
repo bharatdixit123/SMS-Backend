@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="" th:href="@{/CSS/studentUpdateForm.css}"/>
+</head>
+<body>
+
+<h1 id="heading">STUDENT UPDATE</h1>
+ 
+ <div class="container">
+<div class="header">STUDENT UPDATE</div>
+
+<form th:action="@{/saveData}" th:object="${student}" method="post" onsubmit="return validationForm()">
+
+    <input type="hidden" th:field="*{id}" />
+    
+    <div class="form-grid">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" th:field="*{name}" required />
+    </div>
+
+    <div class="form-group">
+        <label>Roll No</label>
+        <input type="number" th:field="*{rollNo}" />
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <select id="gender" th:field="*{gender}" required>
+    <option value="" disabled hidden>Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+</select>
+    </div>
+
+    <div class="form-group">
+        <label>Age</label>
+        <input type="number" th:field="*{age}" />
+    </div>
+
+    <div class="form-group">
+        <label>Course</label>
+        
+<select id="course" th:field="*{course}" required>
+    <option value="" disabled hidden>Select Course</option>
+    <option value="Java Full Stack">Java Full Stack</option>
+    <option value="React">React</option>
+    <option value="Spring Boot">Spring Boot</option>
+    <option value="Web Development">Web Development</option>
+</select>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" th:field="*{email}" required />
+    </div>
+
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="number" th:field="*{phone}" required />
+    </div>
+
+    <div class="buttons">
+        <button type="reset">Cancel</button>
+        <button type="submit">Save</button>
+    </div>
+    </div>
+</form>
+
+</div>
+
+<script src="" th:src="@{JS/studentUpdateForm.js}"></script>
+
+</body>
+</html>

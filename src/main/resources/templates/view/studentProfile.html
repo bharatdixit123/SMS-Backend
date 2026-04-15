@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"	>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="" th:href="@{/CSS/studentProfile.css}"/>
+</head>
+<body>
+
+<div class="profile-container">
+    <h2>Student Profile</h2>
+    <table>
+    
+        <tr>
+            <td class="label">S.No</td>
+            <td class="value" th:text="${std.id}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">Name</td>
+            <td class="value" th:text="${std.name}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">RollNo</td>
+            <td class="value" th:text="${std.rollNo}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">Gender</td>
+            <td class="value" th:text="${std.gender}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">Age</td>
+            <td class="value" th:text="${std.age}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">Course</td>
+            <td class="value" th:text="${std.course}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">Email</td>
+            <td class="value" th:text="${std.email}"></td>
+        </tr>
+        
+        <tr>
+            <td class="label">Phone</td>
+            <td class="value" th:text="${std.phone}"></td>
+        </tr>
+    </table>
+    
+    
+    <a th:href="@{/updateStd/{id}(id=${std.id})}"><button type="button">Edit Profile</button></a>
+    <a th:href="@{/deleteStd/{id}(id=${std.id})}"><button type="button">Delete Profile</button></a>
+</div>
+
+</body>
+</html>
